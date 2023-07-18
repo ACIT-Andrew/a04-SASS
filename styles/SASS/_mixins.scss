@@ -1,0 +1,15 @@
+
+// Flexbox //
+@mixin flex-custom($direction: row, $align:center, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Same value for multiple properties //
+@mixin assignValue($properties, $value) {
+    @each $property in $properties {
+        #{$property}: $value
+    }
+}

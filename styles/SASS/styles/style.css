@@ -1,0 +1,186 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.site-header .site-header__nav ul a, .site-header .site-header__nav > ul .site-header__sub-menu-title {
+  display: inline-block;
+  padding: 0.5rem 0;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.site-header {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.site-header .site-header__logo > img {
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem;
+  min-height: 4rem;
+}
+.site-header .site-header__nav.show > ul {
+  width: 70%;
+}
+.site-header .site-header__nav > ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  padding: 2rem 0;
+  height: 100vh;
+  list-style: none;
+  text-align: center;
+  background-color: #f7941d;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav > ul > li {
+    background-color: transparent;
+    margin: 0;
+  }
+}
+.site-header .site-header__nav > ul li {
+  background-color: #ffc074;
+  margin: 0.2rem 0;
+  width: 100%;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav > ul .site-header__sub-menu-title {
+    color: black;
+    padding: 0.5rem 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+.site-header .site-header__nav > ul .site-header__sub-menu-title + ul li {
+  background-color: #ffc074;
+}
+.site-header .site-header__nav > ul .site-header__sub-menu-title + ul li:hover {
+  background-color: #faa033;
+  font-weight: 700;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav ul {
+    display: flex;
+    position: static;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    transition: none;
+    height: 100%;
+  }
+}
+.site-header .site-header__nav ul a {
+  text-decoration: none;
+}
+.site-header .site-header__nav ul > li:hover,
+.site-header .site-header__nav ul > li .site-header__sub-menu-title {
+  background-color: #faa033;
+  font-weight: 700;
+}
+.site-header .site-header__nav .bi {
+  vertical-align: -0.025em;
+  margin-left: 0.2rem;
+}
+.site-header .site-header__nav .rotated {
+  transform: rotate(180deg);
+}
+.site-header .site-header__nav .site-header__sub-menu {
+  width: 100%;
+  list-style: none;
+}
+.site-header .site-header__nav .site-header__menu-btn {
+  position: relative;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav .site-header__menu-btn {
+    display: none;
+  }
+}
+.site-header .site-header__nav .site-header__menu-btn .site-header__menu-bar {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  transition: all 0.3s;
+}
+.site-header .site-header__nav .site-header__menu-btn .site-header__menu-letter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  background: transparent;
+  opacity: 0;
+}
+.site-header .site-header__nav .site-header__menu-btn:hover span:nth-child(1) {
+  transform: translateX(-95%);
+  opacity: 1;
+}
+.site-header .site-header__nav .site-header__menu-btn:hover span:nth-child(2) {
+  transform: translateX(95%);
+  opacity: 1;
+}
+.site-header .site-header__nav .site-header__menu-btn:hover span:nth-child(3) {
+  transform: translateX(160%);
+  opacity: 1;
+}
+.site-header .site-header__nav .site-header__menu-btn span:nth-child(4) {
+  top: 4px;
+  left: 0;
+  background-color: #9e1f63;
+}
+.site-header .site-header__nav .site-header__menu-btn span:nth-child(5) {
+  background-color: #00a651;
+  left: 0;
+  transform: translateY(-1.5px);
+}
+.site-header .site-header__nav .site-header__menu-btn span:nth-child(6) {
+  background-color: #f7941d;
+  left: 0;
+  bottom: 4px;
+}
+.site-header .site-header__nav .site-header__menu-btn.selected span:nth-child(4) {
+  transform: translateY(8.9px) rotateZ(45deg);
+}
+.site-header .site-header__nav .site-header__menu-btn.selected span:nth-child(5) {
+  opacity: 0;
+}
+.site-header .site-header__nav .site-header__menu-btn.selected span:nth-child(6) {
+  transform: translateY(-8.9px) rotateZ(-45deg);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #9e1f63;
+}
+
+.box {
+  border: 1px solid rgba(0, 0, 0, 0.509);
+}
+
+.nowrap {
+  white-space: nowrap;
+}/*# sourceMappingURL=style.css.map */

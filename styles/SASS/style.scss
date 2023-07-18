@@ -1,0 +1,22 @@
+@use "variables" as *;
+@use 'typography';
+@use "mixins" as mixins;
+@use 'header';
+
+////// GENERAL //////
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: $magenta-theme;
+  }
+}
+
+.box {
+  border: 1px solid rgba(0, 0, 0, 0.509);
+}
+
+.nowrap {
+  white-space: nowrap;
+}
