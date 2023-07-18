@@ -84,10 +84,20 @@ body {
 .site-header .site-header__nav ul a {
   text-decoration: none;
 }
-.site-header .site-header__nav ul > li:hover,
-.site-header .site-header__nav ul > li .site-header__sub-menu-title {
+@media (min-width: 50em) {
+  .site-header .site-header__nav ul a {
+    color: black;
+    padding: 0.5rem 1rem;
+  }
+}
+.site-header .site-header__nav ul > li:hover, .site-header .site-header__nav ul > li:hover .site-header__sub-menu-title {
   background-color: #faa033;
   font-weight: 700;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav ul > li:hover, .site-header .site-header__nav ul > li:hover .site-header__sub-menu-title {
+    background-color: rgb(226, 238, 243);
+  }
 }
 .site-header .site-header__nav .bi {
   vertical-align: -0.025em;

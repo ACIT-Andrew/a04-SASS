@@ -71,6 +71,9 @@
           align-items: center;
         }
         + ul {
+          @media (min-width: 50em) {
+            
+          }
           li {
             background-color: $light-orange-theme;
 
@@ -96,13 +99,20 @@
       a {
         @extend %sub-menu-items;
         text-decoration: none;
+        @media (min-width: 50em) {
+          color: black;
+          padding: 0.5rem 1rem;
+        }
       }
 
       > li {
         &:hover,
-        .site-header__sub-menu-title {
+        &:hover .site-header__sub-menu-title {
           background-color: #faa033;
           font-weight: 700;
+          @media (min-width: 50em) {
+            background-color: rgb(226, 238, 243);
+          }
         }
       }
     }
