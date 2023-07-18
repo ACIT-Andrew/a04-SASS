@@ -1,3 +1,85 @@
-@use 'variables' as *;
-@use 'mixins' as mixins;
+@use "variables" as *;
+@use "mixins" as mixins;
 
+%flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  @include mixins.flex-custom(column, start, center);
+  text-align: center;
+  background-color: $light-blue-theme;
+  padding: 2rem;
+  padding-top: 1rem;
+  border-top: 5px solid $magenta-theme;
+  @media (min-width: 50em) {
+    @include mixins.flex-custom(row, center, center);
+    flex-direction: row;
+    padding-top: 0;
+  }
+}
+
+ul {
+  display: block;
+}
+
+.logo-div {
+  @extend %flex-center;
+  img {
+    @extend %flex-center;
+    width: 300px;
+    max-width: 300px;
+    padding-top: 0;
+    @media (min-width: 50em) {
+        
+    }
+  }
+}
+
+.footer-nav-links {
+  @extend %flex-center;
+  flex-wrap: wrap;
+  text-decoration: none;
+  list-style: none;
+  font-weight: bold;
+  li {
+    margin-left: 8px;
+  }
+  @media (min-width:50em){
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+}
+
+.u-list-dot {
+  @extend %flex-center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  list-style: none;
+  li:after {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 1rem;
+    background-color: $orange-theme;
+    margin: 0 8px;
+  }
+}
+
+.address {
+  border-top: 2px solid black;
+  background-color: $darker-light-blue-theme;
+  padding: 1rem 1rem 1rem 0;
+  font-size: 0.75rem;
+  @include mixins.flex-custom(column, start, center);
+  text-align: center;
+
+  @media (min-width: 50em) {
+    justify-content: flex-end;
+    *{
+        margin-left: 1rem;
+    }
+  }
+}
