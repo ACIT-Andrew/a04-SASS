@@ -2,6 +2,7 @@
 @use 'typography';
 @use "mixins" as mixins;
 @use 'header';
+@use 'content';
 
 ////// GENERAL //////
 a {
@@ -11,10 +12,6 @@ a {
   &:hover {
     color: $magenta-theme;
   }
-}
-
-.box {
-  border: 1px solid rgba(0, 0, 0, 0.509);
 }
 
 .nowrap {

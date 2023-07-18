@@ -1,6 +1,5 @@
-
 // Flexbox //
-@mixin flex-custom($direction: row, $align:center, $justify) {
+@mixin flex-custom($direction: row, $align: center, $justify) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
@@ -9,7 +8,15 @@
 
 // Same value for multiple properties //
 @mixin assignValue($properties, $value) {
-    @each $property in $properties {
-        #{$property}: $value
-    }
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}
+
+@mixin gridPosition($rowStart, $rowEnd, $colStart, $colEnd) {
+  grid-row-start: $rowStart;
+  grid-column-start: $colStart;
+
+  grid-row-end: $rowEnd;
+  grid-column-end: $colEnd;
 }

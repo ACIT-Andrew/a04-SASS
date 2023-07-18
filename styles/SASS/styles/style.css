@@ -20,8 +20,11 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 3.5rem;
+  position: fixed;
+  width: 100%;
 }
-.site-header .site-header__logo > img {
+.site-header__logo > img {
   width: 4rem;
   height: 4rem;
   min-width: 4rem;
@@ -43,16 +46,16 @@ body {
   overflow: hidden;
   transition: width 0.3s;
 }
+.site-header .site-header__nav > ul li {
+  background-color: #ffc074;
+  margin: 0.2rem 0;
+  width: 100%;
+}
 @media (min-width: 50em) {
   .site-header .site-header__nav > ul > li {
     background-color: transparent;
     margin: 0;
   }
-}
-.site-header .site-header__nav > ul li {
-  background-color: #ffc074;
-  margin: 0.2rem 0;
-  width: 100%;
 }
 @media (min-width: 50em) {
   .site-header .site-header__nav > ul .site-header__sub-menu-title {
@@ -63,12 +66,40 @@ body {
     align-items: center;
   }
 }
+@media (min-width: 50em) {
+  .site-header .site-header__nav > ul .site-header__sub-menu-title + ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 0;
+    top: 4rem;
+    width: 10rem;
+    height: auto;
+    transform: translateX(-2rem);
+  }
+}
 .site-header .site-header__nav > ul .site-header__sub-menu-title + ul li {
   background-color: #ffc074;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav > ul .site-header__sub-menu-title + ul li {
+    background-color: rgb(204, 225, 233);
+    width: 100%;
+    margin: 0;
+  }
 }
 .site-header .site-header__nav > ul .site-header__sub-menu-title + ul li:hover {
   background-color: #faa033;
   font-weight: 700;
+}
+@media (min-width: 50em) {
+  .site-header .site-header__nav > ul .site-header__sub-menu-title + ul li:hover {
+    background-color: lightblue;
+    width: 100%;
+    margin: 0;
+  }
 }
 @media (min-width: 50em) {
   .site-header .site-header__nav ul {
@@ -179,16 +210,129 @@ body {
   transform: translateY(-8.9px) rotateZ(-45deg);
 }
 
+.box {
+  border: 1px solid rgba(0, 0, 0, 0.509);
+}
+
+.news-column-heading {
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+main {
+  padding-top: 4rem;
+}
+
+.news-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+}
+.news-column > .news-column-section {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+#latest,
+#insider {
+  background-color: rgb(255, 251, 247);
+}
+
+#top-stories {
+  background-color: rgb(236, 236, 236);
+}
+
+.news-content {
+  padding: 0;
+  border-bottom: 1px solid #000;
+}
+.news-content * {
+  margin-bottom: 1rem;
+}
+.news-content a {
+  text-decoration: none;
+}
+.news-content h3 a {
+  font-size: 1.5rem;
+}
+.news-content h3 + p {
+  color: red;
+}
+.news-content h3 ~ p {
+  font-style: italic;
+}
+
+a.thumbnail {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 200px;
+  margin-bottom: 1rem;
+}
+a.thumbnail img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 3px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (min-width: 50em) {
+  .desk-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 30% 2fr 2fr 30%;
+    gap: 0px;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #latest {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 2;
+  }
+  #top-stories {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 5;
+    grid-column-end: 4;
+  }
+  #insider {
+    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-end: 5;
+    grid-column-end: 5;
+  }
+  .news-column {
+    justify-content: space-between;
+    height: 100%;
+  }
+  .news-column > .news-column-section {
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 2rem;
+  }
+  .thumbnail {
+    margin: 0 auto;
+  }
+  .news-content h3 {
+    text-align: center;
+  }
+}
 a {
   text-decoration: none;
   color: black;
 }
 a:hover {
   color: #9e1f63;
-}
-
-.box {
-  border: 1px solid rgba(0, 0, 0, 0.509);
 }
 
 .nowrap {

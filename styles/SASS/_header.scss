@@ -18,8 +18,10 @@
 .site-header {
   background-color: $light-blue-theme;
   @include mixins.flex-custom($justify: space-between);
-
-  .site-header__logo {
+  padding: 0 3.5rem;
+  position: fixed;
+  width: 100%;
+  &__logo {
     > img {
       @include mixins.assignValue(width height min-width min-height, 4rem);
     }
@@ -47,17 +49,17 @@
       overflow: hidden;
       transition: width 0.3s;
 
+      li {
+        background-color: $light-orange-theme;
+        margin: 0.2rem 0;
+        width: 100%;
+      }
+
       @media (min-width: 50em) {
         > li {
           background-color: transparent;
           margin: 0;
         }
-      }
-
-      li {
-        background-color: $light-orange-theme;
-        margin: 0.2rem 0;
-        width: 100%;
       }
 
       .site-header__sub-menu-title {
@@ -72,14 +74,29 @@
         }
         + ul {
           @media (min-width: 50em) {
-            
+            position: absolute;
+            @include mixins.flex-custom(column, start, start);
+            gap: 0;
+            top: 4rem;
+            width: 10rem;
+            height: auto;
+            transform: translateX(-2rem);
           }
           li {
             background-color: $light-orange-theme;
-
+            @media (min-width: 50em) {
+              background-color: rgb(204, 225, 233);
+              width: 100%;
+              margin: 0;
+            }
             &:hover {
               background-color: #faa033;
               font-weight: 700;
+              @media (min-width: 50em) {
+                background-color: $light-blue-theme;
+                width: 100%;
+                margin: 0;
+              }
             }
           }
         }
